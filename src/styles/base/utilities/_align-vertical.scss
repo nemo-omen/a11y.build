@@ -1,0 +1,12 @@
+// | -------------------------------------------------------------
+// | > Align Vertical
+// | -------------------------------------------------------------
+// |   Align Vertical utility token.
+// | -------------------------------------------------------------
+
+.align-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}

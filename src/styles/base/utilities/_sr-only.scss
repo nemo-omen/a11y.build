@@ -1,0 +1,17 @@
+// | -------------------------------------------------------------
+// | > SR Only
+// | -------------------------------------------------------------
+// |   Screen Reader Only utility token.
+// | -------------------------------------------------------------
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: 0;
+  padding: 0;
+  width: 1px;
+  height: auto;
+  border: 0;
+  white-space: nowrap;
+}
