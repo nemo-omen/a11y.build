@@ -1,0 +1,27 @@
+---
+  import HeadLayout from './HeadLayout.astro';
+  import Header from '../components/Header.astro';
+  import Sidebar from '../components/Sidebar.astro';
+
+  const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <HeadLayout title={title}>
+  </HeadLayout>
+
+</head>
+
+<body>
+  <Header />
+  <Sidebar />
+
+  <main>
+    <slot />
+  </main>
+</body>
+</html>
