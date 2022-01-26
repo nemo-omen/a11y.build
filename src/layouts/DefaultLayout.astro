@@ -3,7 +3,8 @@
   import Header from '../components/Header.astro';
   import Sidebar from '../components/Sidebar.astro';
 
-  const { title } = Astro.props;
+  const { title, tutorials } = Astro.props;
+
 ---
 
 <!DOCTYPE html>
@@ -18,7 +19,7 @@
 
 <body>
   <Header />
-  <Sidebar />
+  <Sidebar tutorials={tutorials} />
 
   <main>
     <slot />

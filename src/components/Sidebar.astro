@@ -1,5 +1,7 @@
 ---
+  const { tutorials } = Astro.props;
 ---
   <aside id="sidebar">
     <h3>Sidebar</h3>
+    {tutorials.map((tutorial) => `<a>${}</a>`)}
   </aside>
