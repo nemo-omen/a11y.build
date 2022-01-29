@@ -139,6 +139,7 @@
 	--foreground: #191923;
 	--foreground-muted: #252533;
 	--link: #0E79B2;
+	--hover: #C42348;
 }
 
 body {
@@ -257,6 +258,27 @@ h2, h3 {
 	max-width: 25ch;
 }
 
+#site {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs-s);
+	align-items: flex-start;
+	align-self: start;
+	text-decoration: none;
+	font-size: var(--step-1);
+}
+
+#site:hover > * {
+	color: var(--hover);
+}
+
+#site h1 {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	font-size: var(--step-1);
+	letter-spacing: 0.125em;
+}
 
 .post {
 	--flow-space: var(--space-container);

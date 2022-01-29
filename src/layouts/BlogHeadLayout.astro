@@ -1,0 +1,16 @@
+---
+  const { permalink, title, description } = Astro.props;
+---
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={permalink} />
+  <meta property="og:title" content={'a11y.build: ' + title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="https://trainingmontage.dev/assets/images/Optimized-DishCloudsCrop.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={permalink} />
+  <meta property="twitter:title" content={'a11y.build: ' + title} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content="https://trainingmontage.dev/assets/images/Optimized-DishCloudsCrop.jpg" />

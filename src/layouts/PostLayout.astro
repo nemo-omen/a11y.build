@@ -1,25 +1,48 @@
 ---
-  import DefaultLayout from './DefaultLayout.astro';
+  import HeadLayout from './HeadLayout.astro';
+  import BlogHeadLayout from './BlogHeadLayout.astro';
+  import Header from '../components/Header.astro';
+  import Footer from '../components/Footer.astro';
+  import Sidebar from '../components/Sidebar.astro';
   const sections = Astro.fetchContent('../pages/sections/*/*.md');
   const { content } = Astro.props;
 ---
-<DefaultLayout title={content.title} sections={sections}>
-<section class="post flow">
-    <h2 class="section-heading">{content.title}</h2>
-		<time>
-		Last updated: 
-				{new Date(content.date)
-          .toLocaleString(
-            'en-us', 
-            {
-              weekday: 'long', 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric'
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <HeadLayout title={content.title}>
+    <BlogHeadLayout title={content.title} permalink={content.permalink} description={content.description}></BlogHeadLayout>
+  </HeadLayout>
+
+</head>
+
+<body>
+  <Header />
+  <Sidebar sections={sections} />
+
+  <main class="flow" id="main">
+    <section class="post flow">
+      <h2 class="section-heading">{content.title}</h2>
+      <time>
+        Last updated: 
+            {new Date(content.date)
+              .toLocaleString(
+                'en-us', 
+                {
+                  weekday: 'long', 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric'
+                }
+              )
             }
-          )
-				}
-		</time>
-    <slot />
-</section>
-</DefaultLayout>
+        </time>
+        <slot />
+    </section>
+  </main>
+
+  <Footer />
+</body>
+</html>
