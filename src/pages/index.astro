@@ -1,5 +1,6 @@
 ---
 	import DefaultLayout from '../layouts/DefaultLayout.astro';
+	import Icon from '../components/Icon.astro';
 	/**@NOTE - 	you're really, really going to want to make sure your
 	 *  				.md files & their parent directories are located in the
 	 * 					/src/pages directory so you can rely on file-based routing
@@ -11,12 +12,9 @@
 ---
 <DefaultLayout title="a11y.build" sections={sections}>
 	{sections.map((section) => `<section class="post flow">
-		<div class="section-header">
-			<a href="/#${section.slug}">
-				<h2 id=${section.slug} class="section-heading">${section.title}</h2>
-			</a>
-			<a href="${section.url}" class="section-permalink">(permalink)</a>
-		</div>
+		<a href="/#${section.slug}">
+			<h2 id=${section.slug} class="section-heading">${section.title}</h2>
+		</a>
 		<time>
 		Last updated: 
 			<a href="${section.url}">

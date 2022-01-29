@@ -1,6 +1,7 @@
 ---
   import HeadLayout from './HeadLayout.astro';
   import Header from '../components/Header.astro';
+  import Footer from '../components/Footer.astro';
   import Sidebar from '../components/Sidebar.astro';
 
   const { title, sections } = Astro.props;
@@ -25,8 +26,6 @@
     <slot />
   </main>
 
-  <footer>
-    <p>&copy; {new Date().getFullYear()} <a href="https://a11y.build">a11y.build</a></p>
-  </footer>
+  <Footer />
 </body>
 </html>

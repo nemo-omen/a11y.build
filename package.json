@@ -9,9 +9,7 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@iconify/json": "^2.0.30",
-    "astro": "^0.22.17",
-    "unplugin-icons": "^0.13.0"
+    "astro": "^0.22.17"
   },
   "dependencies": {
     "@astrojs/renderer-svelte": "^0.3.1"

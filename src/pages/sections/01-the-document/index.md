@@ -2,6 +2,7 @@
 title: 'The Document'
 date: 2022-01-28 22:01:38
 slug: 'the-document'
+layout: '../../../layouts/PostLayout.astro'
 ---
 
 Every website begins with a document.
