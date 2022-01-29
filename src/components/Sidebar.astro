@@ -1,7 +1,9 @@
 ---
   const { tutorials } = Astro.props;
+  const { guides } = Astro.props;
 ---
   <aside id="sidebar">
-    <h3>Sidebar</h3>
-    {tutorials.map((tutorial) => `<a>${}</a>`)}
+    <h3>Tutorials</h3>
+
+    {tutorials.map((tutorial) => `<a href="${tutorial.url}">Hey</a>`)}
   </aside>

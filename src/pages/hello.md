@@ -1,4 +1,5 @@
 ---
+slug: hello
 setup:
   import Okay from './Okay.svelte'
 ---

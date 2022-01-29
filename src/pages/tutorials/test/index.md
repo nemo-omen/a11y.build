@@ -1,4 +1,6 @@
 ---
+href: '/tutorials/test'
+slug: test
 title: 'Test'
 date: 2022-01-23 16:43:14
 ---

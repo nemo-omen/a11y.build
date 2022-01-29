@@ -1,6 +1,11 @@
 ---
 	import DefaultLayout from '../layouts/DefaultLayout.astro';
-	const allTutorials = Astro.fetchContent('../tutorials/*/*.md');
+	/**@NOTE - 	you're really, really going to want to make sure your
+	 *  				.md files & their parent directories are located in the
+	 * 					/src/pages directory so you can rely on file-based routing
+	 * */ 
+
+	const allTutorials = Astro.fetchContent('./tutorials/*/*.md');
   console.log(allTutorials);
 ---
 
