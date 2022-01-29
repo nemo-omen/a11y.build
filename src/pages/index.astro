@@ -11,9 +11,12 @@
 ---
 <DefaultLayout title="a11y.build" sections={sections}>
 	{sections.map((section) => `<section class="post flow">
-		<a href="/#${section.slug}">
-			<h2 id=${section.slug}>${section.title}</h2>
-		</a>
+		<div class="section-header">
+			<a href="/#${section.slug}">
+				<h2 id=${section.slug} class="section-heading">${section.title}</h2>
+			</a>
+			<a href="${section.url}" class="section-permalink">(permalink)</a>
+		</div>
 		<time>
 		Last updated: 
 			<a href="${section.url}">

@@ -174,7 +174,7 @@ footer {
 }
 
 /* READABILITY STYLES */
-a:not([class]) {
+a:not([class]), .skip-link {
   color: currentColor;
 }
 
@@ -285,6 +285,26 @@ h2, h3 {
 
 #navigation li {
 	list-style: none;
+}
+
+.skip-link{
+	position: absolute;
+	left: 50%;
+	top: 0.5rem;
+	transform: translateY(-100%);
+	padding: var(--space-2xs);
+	transition: transform 0.2s ease-out;
+}
+
+.skip-link:focus {
+	/* top: 0; */
+	transform: translateY(0%);
+}
+
+.section-header {
+	display: flex;
+	align-items: baseline;
+	gap: var(--space-2xs-xs);
 }
 
 /* MEDIA QUERIES */

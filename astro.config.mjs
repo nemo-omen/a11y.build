@@ -6,10 +6,17 @@
 // helpful tooltips, and warnings if your exported object is invalid.
 // You can disable this by removing "@ts-check" and `@type` comments below.
 
+import Icons from 'unplugin-icons/vite'
+
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ (
 	{
 		// Set "renderers" to "[]" to disable all default, builtin component support.
 		// renderers: [],
+		vite: {
+			plugins: [
+				Icons({ /* options */ }),
+			],
+		}
 	}
 );
