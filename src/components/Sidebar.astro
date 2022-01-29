@@ -3,7 +3,7 @@
   const { guides } = Astro.props;
 ---
   <aside id="sidebar">
-    <ul>
+    <ul id="navigation">
       {sections.map((section) => `
         <li>
           <a href="/#${section.slug}">${section.title}</a>

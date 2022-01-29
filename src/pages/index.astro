@@ -10,10 +10,26 @@
 	console.log(sections);
 ---
 <DefaultLayout title="a11y.build" sections={sections}>
-	{sections.map((section) => `<section>
+	{sections.map((section) => `<section class="post flow">
 		<a href="/#${section.slug}">
 			<h2 id=${section.slug}>${section.title}</h2>
 		</a>
+		<time>
+		Last updated: 
+			<a href="${section.url}">
+				${new Date(section.date)
+								.toLocaleString(
+									'en-us', 
+									{
+										weekday: 'long', 
+										year: 'numeric', 
+										month: 'long', 
+										day: 'numeric'
+									}
+								)
+				}
+			</a>
+		</time>
 		${section.astro.html}
 	</section>`)}
 </DefaultLayout>
