@@ -3,7 +3,7 @@
   import Header from '../components/Header.astro';
   import Sidebar from '../components/Sidebar.astro';
 
-  const { title, tutorials } = Astro.props;
+  const { title, sections } = Astro.props;
 
 ---
 
@@ -19,10 +19,14 @@
 
 <body>
   <Header />
-  <Sidebar tutorials={tutorials} />
+  <Sidebar sections={sections} />
 
   <main>
     <slot />
   </main>
+
+  <footer>
+    <p>&copy; {new Date().getFullYear()} <a href="https://a11y.build">a11y.build</a></p>
+  </footer>
 </body>
 </html>

@@ -5,10 +5,15 @@
 	 * 					/src/pages directory so you can rely on file-based routing
 	 * */ 
 
-	const allTutorials = Astro.fetchContent('./tutorials/*/*.md');
-  console.log(allTutorials);
+	// const allTutorials = Astro.fetchContent('./tutorials/*/*.md');
+	const sections = Astro.fetchContent('./sections/*/*.md');
+	console.log(sections);
 ---
-
-<DefaultLayout title="a11y.build" tutorials={allTutorials}>
-	<h1>Yep</h1>
+<DefaultLayout title="a11y.build" sections={sections}>
+	{sections.map((section) => `<section>
+		<a href="/#${section.slug}">
+			<h2 id=${section.slug}>${section.title}</h2>
+		</a>
+		${section.astro.html}
+	</section>`)}
 </DefaultLayout>
