@@ -1,6 +1,5 @@
-<img src="./public/assets/images/a11y.build-text.svg" width="300">
+<img src="./public/assets/images/a11y.build-text.svg" width="300" alt="a11y.build logo — a terminal output with an icon of a person in a wheelchair moving out of the prompt cursor, followed by the text 'a11y.build'">
 
-# a11y.build
 This is the source for [a11y.build](https://a11y.build), a site dedicated to teaching HTML, CSS, and JavaScript with accessibility as a fundamental part of the process.
 
 This project is in the process of being built. At some point soon it will be ready to show the world.
