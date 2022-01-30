@@ -319,10 +319,8 @@ h2, h3 {
 
 #site {
 	display: inline-flex;
-	/* display: inline flex; */
-	/* flex-direction: column; */
 	gap: var(--space-3xs-2xs);
-	align-items: flex-start;
+	align-items: flex-end;
 	align-self: start;
 	text-decoration: none;
 	font-size: var(--step-1);
@@ -335,7 +333,7 @@ h2, h3 {
 #site h1 {
 	margin: 0;
 	padding: 0;
-	line-height: 1;
+	line-height: 0.9;
 	font-size: var(--step-1);
 	letter-spacing: 0.125em;
 	transition: color 0.2s ease-out;

@@ -15,14 +15,25 @@ Following all of that I imagine I'll want to create a third section with accessi
 
 ## Why?
 
-The CDC estimates that [26% of adults in the US have some type of disability](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html). While there's a moral imperative to provide access to the content we create, there's also a professional imperative — we should strive to create sites that work as close to 100 percent of the time as possible. If we're creating sites that don't work well for 26% of people, we're creating sites that only work 74% of the time.
+The CDC estimates that [26% of adults in the US have some type of disability](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html). While there's a moral imperative to provide access to the content we create, there's also a professional imperative — we should strive to create sites that work as close to 100% of the time as possible. If we're creating sites that don't work well for 26% of people, we're creating sites that only work 74% of the time.
 
 And nobody likes skating by with a C average, right?
 
 ## Outline
-a11y.build will be composed of two approaches to the content. The first, a guide to creating HTML documents from the ground up, presented as a single document with sections devoted to each topic. The second, a collection of posts and tutorials that walk through the practical implementation of a given topic in a friendly way. 
+a11y.build will be composed of two major approaches to the content. 
+
+The first, a guide to creating HTML documents from the ground up, presented as a series of lessons that go into the necessary steps for the creation of a website following accessible practices.
+
+The second, a collection of posts and tutorials that walk through the practical implementation of a given topic in a friendly way.
+
+There may also be two additional sections — Accessible Components, and Further Information (or something like that).
+
+Accessible Components will be devoted to providing installable packages that coincide with a tutorial on how to build the component following accessible practices.
+
+Further Information will be devoted to tangential information related to a given portion of the guide. For example: a post exploring the history of how HTML was created that's linked to from inside the guide's HTML introduction. (this may be too much, but at the moment it feels like it could be important to include information about how this platform came to be and the various protocols and APIs that make it function)
 
 I may follow the [Diátaxis](https://diataxis.fr/) documentation framework and present the tutorials first. I'm really not sure yet.
 
 1. Introduction
    1. What is HTML? -> History of HTML
+   2. (more stuff, obviously)
