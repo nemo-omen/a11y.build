@@ -135,9 +135,14 @@
 	--space-inner: var(--space-xs-s);
 
 	/* COLORS */
-	--background: #FBFAF8;
-	--foreground: #191923;
-	--foreground-muted: #252533;
+	--light: #FBFAF8;
+	--dark: #191923;
+	--dark-muted: #252533;
+	--light-muted: #e9e6e0;
+	--background: var(--light);
+	--foreground: var(--dark);
+	--foreground-muted: var(--dark-muted);
+	--background-muted: var(--light-muted);
 	--link: #0E79B2;
 	--hover: #C42348;
 }
@@ -185,6 +190,10 @@ aside {
 	padding-inline: 1.5rem;
 }
 
+.toc ol li {
+	font-size: var(--step--1);
+}
+
 details > summary {
 	cursor: pointer;
 	list-style-type: none;
@@ -194,6 +203,7 @@ details > summary {
 	transform-origin: 50% 50%;
 	width: 1.25em;
 	height: 1.25em;
+	fill: currentColor;
 }
 
 details[open] summary .summary-indicator {
@@ -259,6 +269,12 @@ h3 {
 	font-size: var(--step-1);
 }
 
+a h1, a h2, .site {
+	/* justify-self: flex-start;
+	align-self: flex-start; */
+	display: inline;
+}
+
 img {
 	max-width: min(55rem, 100%);
 }
@@ -287,7 +303,7 @@ blockquote {
 
 p,
 li {
-	max-width: 60ch;
+	max-width: 50ch;
 }
 
 h1 {
@@ -299,7 +315,8 @@ h2, h3 {
 }
 
 #site {
-	display: flex;
+	display: inline-flex;
+	/* display: inline flex; */
 	flex-direction: column;
 	gap: var(--space-xs-s);
 	align-items: flex-start;
@@ -368,7 +385,16 @@ h2, h3 {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 768px) {
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		--background: var(--dark);
+		--foreground: var(--light);
+		--foreground-muted: var(--light-muted);
+		--background-muted: var(--dark-muted);
+	}
+}
+
+@media screen and (max-width: 550px) {
 	body {
 		display: flex;
 		flex-direction: column;
