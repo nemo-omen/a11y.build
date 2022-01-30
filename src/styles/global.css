@@ -320,8 +320,8 @@ h2, h3 {
 #site {
 	display: inline-flex;
 	/* display: inline flex; */
-	flex-direction: column;
-	gap: var(--space-xs-s);
+	/* flex-direction: column; */
+	gap: var(--space-3xs-2xs);
 	align-items: flex-start;
 	align-self: start;
 	text-decoration: none;
