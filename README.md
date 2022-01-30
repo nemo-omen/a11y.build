@@ -18,3 +18,11 @@ Following all of that I imagine I'll want to create a third section with accessi
 The CDC estimates that [26% of adults in the US have some type of disability](https://www.cdc.gov/ncbddd/disabilityandhealth/infographic-disability-impacts-all.html). While there's a moral imperative to provide access to the content we create, there's also a professional imperative — we should strive to create sites that work as close to 100 percent of the time as possible. If we're creating sites that don't work well for 26% of people, we're creating sites that only work 74% of the time.
 
 And nobody likes skating by with a C average, right?
+
+## Outline
+a11y.build will be composed of two approaches to the content. The first, a guide to creating HTML documents from the ground up, presented as a single document with sections devoted to each topic. The second, a collection of posts and tutorials that walk through the practical implementation of a given topic in a friendly way. 
+
+I may follow the [Diátaxis](https://diataxis.fr/) documentation framework and present the tutorials first. I'm really not sure yet.
+
+1. Introduction
+   1. What is HTML? -> History of HTML

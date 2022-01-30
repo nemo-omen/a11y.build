@@ -1,11 +1,16 @@
 ---
   import HeadLayout from './HeadLayout.astro';
   import BlogHeadLayout from './BlogHeadLayout.astro';
+  import Sidebar from '../components/Sidebar.svelte';
   import Header from '../components/Header.astro';
   import Footer from '../components/Footer.astro';
-  import Navbar from '../components/Navbar.astro';
-  import TOCBar from '../components/TOCBar.astro';
-  const sections = Astro.fetchContent('../pages/sections/*/*.md');
+
+  const guideSections =     Astro.fetchContent('../pages/sections/*/*.md');
+  const tutorialSections =  Astro.fetchContent('../pages/tutorials/*/*.md');
+  const postSections =      Astro.fetchContent('../pages/posts/*/*.md');
+
+  const menus = [tutorialSections, guideSections, postSections];
+  const menuTitles = ['Tutorials', 'Guide', 'More'];
   const { content } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -21,7 +26,8 @@
 
 <body>
   <Header />
-  <Navbar sections={sections} />
+
+  <Sidebar titles={menuTitles} menus={menus} />
 
   <main class="flow" id="main">
     <section class="post flow">
@@ -43,7 +49,6 @@
         <slot />
     </section>
   </main>
-  <TOCBar />
 
   <Footer />
 </body>
