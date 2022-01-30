@@ -3,7 +3,8 @@
   import BlogHeadLayout from './BlogHeadLayout.astro';
   import Header from '../components/Header.astro';
   import Footer from '../components/Footer.astro';
-  import Sidebar from '../components/Sidebar.astro';
+  import Navbar from '../components/Navbar.astro';
+  import TOCBar from '../components/TOCBar.astro';
   const sections = Astro.fetchContent('../pages/sections/*/*.md');
   const { content } = Astro.props;
 ---
@@ -20,7 +21,7 @@
 
 <body>
   <Header />
-  <Sidebar sections={sections} />
+  <Navbar sections={sections} />
 
   <main class="flow" id="main">
     <section class="post flow">
@@ -42,6 +43,7 @@
         <slot />
     </section>
   </main>
+  <TOCBar />
 
   <Footer />
 </body>

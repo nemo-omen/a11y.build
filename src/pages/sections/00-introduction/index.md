@@ -3,6 +3,7 @@ title: 'Introduction'
 slug: 'introduction'
 date: 2022-01-29 08:42:15
 layout: '../../../layouts/PostLayout.astro'
+draft: true
 ---
 
 When someone new to web design or web development is first exposed to HTML, all too often that exposure is limited to the function and basic semantics of the language.
