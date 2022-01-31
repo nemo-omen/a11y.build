@@ -37,3 +37,8 @@ I may follow the [Diátaxis](https://diataxis.fr/) documentation framework and p
 1. Introduction
    1. What is HTML? -> History of HTML
    2. (more stuff, obviously)
+   
+## Resources
+
+[Inclusive Compunents](https://inclusive-components.design/about-the-project/)
+[a11y Project](https://www.a11yproject.com)
