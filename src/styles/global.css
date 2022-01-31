@@ -45,7 +45,38 @@
 	font-style: italic;
 }
 
-
+@font-face {
+	font-family: 'Sylexiad Sans';
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed.otf');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed.otf') format('opentype'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Sylexiad Sans';
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.otf');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.otf') format('opentype'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Sylexiad Sans';
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.otf');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.otf') format('opentype'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Sylexiad Sans';
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.otf');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.otf') format('opentype'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
 
 /* GENERAL STYLES */
 * {
@@ -59,6 +90,7 @@
 								helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 
 	--serif: 'Times New Roman', Times, serif;
+	--sylexiad: 'Sylexiad Sans';
 
 	
 	--reader-font: var(--atkinson-sans);
@@ -160,7 +192,7 @@ body {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-template-areas: 
-		"header 	switcher"
+		"header 	header"
 		"navbar 	main"
 		"footer 	footer";
 	gap: var(--space-document);
@@ -171,18 +203,19 @@ body {
 }
 
 header {
+	display: flex;
+	justify-content: space-between;
 	grid-area: header;
-	/* width: 90vw; */
-	max-width: clamp(16rem, 90vw, 70rem);
+	/* max-width: clamp(16rem, 90vw, 70rem); */
 }
 
 #switcher {
-	grid-area: switcher;
-	justify-self: end;
+	position: absolute;
+	top: -100%;
 }
 
 #switcher:checked ~ main, #switcher:checked ~ #sidebar {
-	font-family: var(--serif);
+	font-family: var(--sylexiad);
 }
 
 .navbar-title {
@@ -275,7 +308,7 @@ h4 {
 }
 
 h1, h2 {
-	font-weight: 700;
+	font-weight: bold;
 }
 
 h1 {
