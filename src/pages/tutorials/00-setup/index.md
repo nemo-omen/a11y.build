@@ -4,6 +4,9 @@ title: 'Setup'
 date: 2022-01-30 21:29:08
 layout: '../../../layouts/PostLayout.astro'
 draft: true
+overviewItems:
+  - text: 'How to set up your development environment for editing HTML, CSS, and JavaScript files.'
+    slug: 'installing-vs-code'
 ---
 
 Web design and development is primarily by editing different kinds of files, usually, (but not always,) `.html`, `.css`, and `.js` files. We can't edit files like that with just any editor — you can't create a working `.html` file using a program like Microsoft Word. You're going to need an editor that's made specifically for editing plain text files.
@@ -12,6 +15,7 @@ But before we get to installing a good editor, let's address something else. Bec
 
 Okay, now that you have a `projects` folder we can move on to installing a good text editor.
 
+## Installing VS Code
 [Visual Studio Code](https://code.visualstudio.com/) is an editor used by many, many web developers. It's not the only editor you can use and many developers prefer different editors. That's fine, and you may develop a different preference at some point, but VS Code is pretty hard to beat when it comes to editing the types of files you'll be editing as a web developer.
 
 Go ahead and download, then install [VS Code](https://code.visualstudio.com/).

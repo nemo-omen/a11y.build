@@ -1,9 +1,10 @@
 ---
   import HeadLayout from './HeadLayout.astro';
   import BlogHeadLayout from './BlogHeadLayout.astro';
-  import Sidebar from '../components/Sidebar.svelte';
   import Header from '../components/Header.astro';
   import Footer from '../components/Footer.astro';
+  import Sidebar from '../components/Sidebar.svelte';
+  import TutorialOverview from '../components/TutorialOverview.svelte';
 
   const guideSections =     Astro.fetchContent('../pages/sections/*/*.md');
   const tutorialSections =  Astro.fetchContent('../pages/tutorials/*/*.md');
@@ -46,6 +47,7 @@
               )
             }
         </time>
+        <TutorialOverview items={content.overviewItems}/>
         <slot />
     </section>
   </main>
