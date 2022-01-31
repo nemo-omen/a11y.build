@@ -9,33 +9,6 @@
 	const sections = Astro.fetchContent('./sections/*/*.md');
 ---
 <DefaultLayout title="a11y.build" sections={sections}>
-	<!-- {sections.map((section) => `<section class="post flow">
-		<a href="/#${section.slug}">
-			<h2 id=${section.slug} class="section-heading">${section.title}</h2>
-		</a>
-		<time>
-		Updated: 
-			<a href="${section.url}" class="date-link">
-				${new Date(section.date)
-								.toLocaleString(
-									'en-us', 
-									{
-										weekday: 'long', 
-										year: 'numeric', 
-										month: 'long', 
-										day: 'numeric'
-									}
-								)
-				}
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="link-icon">
-					<path fill="none" d="M0 0h24v24H0z"/>
-					<path 
-						d="M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"/>
-				</svg>
-			</a>
-		</time>
-		${section.astro.html}
-	</section>`)} -->
 	<div class="hero flow">
 		<p class="hero-intro">Learn web-development techniques that work for <em>everyone</em>.</p>
 		<p class="hero-message">Web design and web development are tough subjects to learn, so it's understandable that most introductions don't focus too much on teaching people how to write code that's accessible and inclusive.</p>
@@ -51,8 +24,7 @@
 
 .hero-intro {
 	font-size: var(--step-3);
-	/* max-width: 25ch; */
-	margin: 0 auto;
-	/* text-align: center; */
+	max-width: 20ch;
+	align-self: flex-start;
 }
 </style>
