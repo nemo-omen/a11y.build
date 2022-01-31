@@ -45,6 +45,9 @@
 	font-style: italic;
 }
 
+
+
+/* GENERAL STYLES */
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -52,10 +55,16 @@
 
 :root {
 	/* FONTS */
-	font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue,
+	--atkinson-sans: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue,
 								helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-	font-size: 1rem;
+
+	--serif: 'Times New Roman', Times, serif;
+
+	
+	--reader-font: var(--atkinson-sans);
 	--user-font-scale: 1rem - 16px;
+	font-family: var(--reader-font);
+	font-size: 1rem;
 	font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem);
 
 	/* UTOPIA FLUID TYPE SCALE */
@@ -151,7 +160,7 @@ body {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-template-areas: 
-		"header 	header"
+		"header 	switcher"
 		"navbar 	main"
 		"footer 	footer";
 	gap: var(--space-document);
@@ -163,8 +172,17 @@ body {
 
 header {
 	grid-area: header;
-	width: 90vw;
+	/* width: 90vw; */
 	max-width: clamp(16rem, 90vw, 70rem);
+}
+
+#switcher {
+	grid-area: switcher;
+	justify-self: end;
+}
+
+#switcher:checked ~ main, #switcher:checked ~ #sidebar {
+	font-family: var(--serif);
 }
 
 .navbar-title {
@@ -230,7 +248,7 @@ footer {
 }
 
 /* READABILITY STYLES */
-a:not([class]), .skip-link, .date-link {
+a:not([class]), .skip-link, .date-link, a:visited {
   color: currentColor;
 	transition: color 0.2s ease-out;
 }
@@ -257,7 +275,7 @@ h4 {
 }
 
 h1, h2 {
-	font-weight: 900;
+	font-weight: 700;
 }
 
 h1 {

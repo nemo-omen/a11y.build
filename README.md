@@ -40,5 +40,9 @@ I may follow the [Diátaxis](https://diataxis.fr/) documentation framework and p
    
 ## Resources
 
-[Inclusive Compunents](https://inclusive-components.design/about-the-project/)
+[Inclusive Components](https://inclusive-components.design/about-the-project/)
 [a11y Project](https://www.a11yproject.com)
+
+## Todo:
+- Font switcher - switch between Atkinson Hyperlegible and Sylaxiad
+  - https://alexandersandberg.com/theme-switcher/
