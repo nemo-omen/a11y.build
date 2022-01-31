@@ -192,9 +192,9 @@ body {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-template-areas: 
-		"header 	header"
-		"navbar 	main"
-		"footer 	footer";
+		"header 	switcher	label"
+		"navbar 	main			main"
+		"footer 	footer		footer";
 	gap: var(--space-document);
 	background: var(--background);
 	color: var(--foreground);
@@ -209,13 +209,52 @@ header {
 	/* max-width: clamp(16rem, 90vw, 70rem); */
 }
 
+#switcher-label {
+	grid-area: label;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: var(--step-1);
+	color: var(--foreground-muted);
+	margin: 0;
+	padding: 0.5rem 1rem;
+	font-family: var(--sylexiad);
+	line-height: 1;
+	transition: color 0.2s ease-out;
+}
+
+#switcher-label:hover {
+	color: var(--hover);
+}
+
+#switcher-label:hover::after {
+	color: var(--hover);
+}
+
+#switcher-label::after {
+	font-size: var(--step--2);
+	font-family: var(--sylexiad);
+	transition: color 0.2s ease-out;
+	content: 'Font';
+}
+
+#switcher:checked ~ #switcher-label::after {
+	font-family: var(--sans);
+}
+
 #switcher {
+	/* grid-area: switcher; */
 	position: absolute;
 	top: -100%;
 }
 
 #switcher:checked ~ main, #switcher:checked ~ #sidebar {
 	font-family: var(--sylexiad);
+}
+
+#switcher:checked ~ #switcher-label {
+	font-family: var(--sans);
 }
 
 .navbar-title {
