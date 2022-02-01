@@ -1,0 +1,87 @@
+---
+ const { id } = Astro.props;
+---
+
+<div class="text-toggle">
+  <label>
+    <input type="radio" tabindex="0" name="font-switcher" id="atkinson-toggle" class="text-radio" aria-label="Use Atkinson Hyperlegible Font" title="Use Atkinson Hyperlegible Font">
+    <div class="text-toggle-choice {toggled ? 'deselected' : 'selected'}" id="atkinson">
+    <p>
+      A<sub>t</sub>
+    </p>
+    </div>
+  </label>
+  <label>
+    <input type="radio" tabindex="0" name="font-switcher" id="sylexiad-toggle" class="text-radio" aria-label="Use Sylexiad Font" title="Use Sylexiad Font">
+    <div class="text-toggle-choice {toggled ? 'selected' : 'deselected'}" id="sylexiad">
+      <p>
+        S<sub>y</sub>
+      </p>
+    </div>
+  </label>
+</div>
+
+<style>
+  .text-toggle {
+    display: flex;
+    gap: 1rem;
+    aspect-ratio: 2 / 1;
+    border: none;
+    padding: 0;
+    background: transparent;
+    font-size: var(--step-1);
+  }
+
+  label {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+  }
+
+  .text-toggle-choice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.125em;
+    aspect-ratio: 1 / 1;
+  }
+
+  .text-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+  }
+
+  .text-radio:focus {
+    outline-color: transparent;
+  }
+
+  .text-radio:focus ~ .text-toggle-choice {
+    outline: 1px solid var(--foreground-muted);
+    background: var(--background-muted);
+    color: var(--link);
+    outline-offset: 0.25rem;
+  }
+
+  .text-radio:checked ~ .text-toggle-choice {
+    color: var(--link);
+  }
+
+  #sylexiad {
+    font-family: var(--sylexiad);
+  }
+</style>

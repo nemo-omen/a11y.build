@@ -192,9 +192,9 @@ body {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-template-areas: 
-		"header 	switcher	label"
-		"navbar 	main			main"
-		"footer 	footer		footer";
+		"header 	header"
+		"navbar 	main"
+		"footer 	footer";
 	gap: var(--space-document);
 	background: var(--background);
 	color: var(--foreground);
