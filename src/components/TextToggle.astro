@@ -29,13 +29,17 @@
 
   function setSelected(fontName) {
     if(fontName === 'atkinson') {
-      atkinson.classList.add('selected');
-      sylexiad.classList.remove('selected');
+      // atkinson.classList.add('selected');
+      // sylexiad.classList.remove('selected');
+      sylexiad.setAttribute('aria-pressed', false);
+      atkinson.setAttribute('aria-pressed', true);
     }
 
     if(fontName === 'sylexiad') {
-      sylexiad.classList.toggle('selected');
-      atkinson.classList.remove('selected');
+      // sylexiad.classList.toggle('selected');
+      // atkinson.classList.remove('selected');
+      sylexiad.setAttribute('aria-pressed', true);
+      atkinson.setAttribute('aria-pressed', false);
     }
   }
 
@@ -69,7 +73,7 @@
   .switch:hover {
     color: var(--hover);
   }
-  .selected {
+  .switch[aria-pressed='true'] {
     background: var(--background-muted);
   }
 </style>
