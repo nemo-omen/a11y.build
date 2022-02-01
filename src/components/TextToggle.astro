@@ -2,8 +2,16 @@
  const { id } = Astro.props;
 ---
 
+
+
 <div class="text-toggle">
-  <label>
+  <button class="switch-atkinson">
+    Atkinson
+  </button>
+  <button class="switch-sylexiad">
+    Sylaxiad
+  </button>
+  <!-- <label>
     <input type="radio" tabindex="0" name="font-switcher" id="atkinson-toggle" class="text-radio" aria-label="Use Atkinson Hyperlegible Font" title="Use Atkinson Hyperlegible Font">
     <div class="text-toggle-choice {toggled ? 'deselected' : 'selected'}" id="atkinson">
     <p>
@@ -18,18 +26,38 @@
         S<sub>y</sub>
       </p>
     </div>
-  </label>
+  </label> -->
 </div>
+
+<script>
+  const atkinson = document.querySelector('.switch-atkinson');
+  const sylexiad = document.querySelector('.switch-sylexiad');
+
+  atkinson.addEventListener('click', () => switchFont('atkinson'));
+  sylexiad.addEventListener('click', () => switchFont('sylexiad'));
+
+  function switchFont(fontName) {
+    localStorage.setItem('documentFont', fontName);
+    document.documentElement.className = fontName;
+  }
+
+  (function() {
+    if(localStorage.getItem('documentFont')) {
+      switchFont(localStorage.getItem('documentFont'));
+    }
+  }())
+</script>
 
 <style>
   .text-toggle {
     display: flex;
     gap: 1rem;
-    aspect-ratio: 2 / 1;
+    /* aspect-ratio: 2 / 1; */
     border: none;
     padding: 0;
     background: transparent;
     font-size: var(--step-1);
+    /* background: tomato; */
   }
 
   label {
@@ -50,7 +78,9 @@
     justify-content: center;
     align-items: center;
     letter-spacing: 0.125em;
-    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    padding: 0.25rem;
+    font-weight: bold;
   }
 
   .text-radio {
@@ -72,13 +102,13 @@
 
   .text-radio:focus ~ .text-toggle-choice {
     outline: 1px solid var(--foreground-muted);
-    background: var(--background-muted);
-    color: var(--link);
+    /* background: var(--background-muted); */
+    color: var(--hover);
     outline-offset: 0.25rem;
   }
 
   .text-radio:checked ~ .text-toggle-choice {
-    color: var(--link);
+    color: var(--hover);
   }
 
   #sylexiad {

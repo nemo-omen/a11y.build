@@ -5,6 +5,7 @@
   import Footer from '../components/Footer.astro';
   import Sidebar from '../components/Sidebar.svelte';
   import TutorialOverview from '../components/TutorialOverview.svelte';
+  import TextToggle from '../components/TextToggle.astro';
 
   const guideSections =     Astro.fetchContent('../pages/sections/*/*.md');
   const tutorialSections =  Astro.fetchContent('../pages/tutorials/*/*.md');
@@ -27,6 +28,7 @@
 
 <body>
   <Header />
+  <TextToggle />
   <!-- <input type="checkbox" id="switcher" />
   <label id="switcher-label" for="switcher" tabindex="0">
     A

@@ -188,13 +188,21 @@
 	--hover: #C42348;
 }
 
+.atkinson {
+	font-family: var(--atkinson-sans);
+}
+
+.sylexiad {
+	font-family: var(--sylexiad);
+}
+
 body {
 	display: grid;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: auto 1fr 5rem;
 	grid-template-areas: 
-		"header 	header"
-		"navbar 	main"
-		"footer 	footer";
+		"header 	header	switcher"
+		"navbar 	main		main"
+		"footer 	footer	footer";
 	gap: var(--space-document);
 	background: var(--background);
 	color: var(--foreground);
