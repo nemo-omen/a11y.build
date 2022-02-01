@@ -197,6 +197,23 @@
 	letter-spacing: 0.05em;
 }
 
+.light {
+	--background: var(--light);
+	--foreground: var(--dark);
+	--foreground-muted: var(--dark-muted);
+	--background-muted: var(--light-muted);
+	--link: #319ed8;
+	--hover: #C42348;
+}
+
+.dark {
+	--background: var(--dark);
+	--foreground: var(--light);
+	--foreground-muted: var(--light-muted);
+	--background-muted: var(--dark-muted);
+	--link: #C42348;
+	--hover: #319ed8;
+}
 
 body {
 	display: grid;
@@ -455,7 +472,7 @@ h2, h3 {
 
 /* MEDIA QUERIES */
 
-@media screen and (prefers-color-scheme: dark) {
+/* @media screen and (prefers-color-scheme: dark) {
 	:root {
 		--background: var(--dark);
 		--foreground: var(--light);
@@ -464,7 +481,7 @@ h2, h3 {
 		--hover: #319ed8;
 		--link: #C42348;
 	}
-}
+} */
 
 @media screen and (max-width: 1024px) {
 	body {
