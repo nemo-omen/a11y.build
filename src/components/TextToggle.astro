@@ -4,30 +4,15 @@
 
 
 
-<div class="text-toggle">
-  <button class="switch-atkinson">
-    Atkinson
+<fieldset class="text-toggle">
+<legend>Font</legend>
+  <button class="switch switch-atkinson">
+    A<sub>t</sub>
   </button>
-  <button class="switch-sylexiad">
-    Sylaxiad
+  <button class="switch switch-sylexiad">
+    S<sub>y</sub>
   </button>
-  <!-- <label>
-    <input type="radio" tabindex="0" name="font-switcher" id="atkinson-toggle" class="text-radio" aria-label="Use Atkinson Hyperlegible Font" title="Use Atkinson Hyperlegible Font">
-    <div class="text-toggle-choice {toggled ? 'deselected' : 'selected'}" id="atkinson">
-    <p>
-      A<sub>t</sub>
-    </p>
-    </div>
-  </label>
-  <label>
-    <input type="radio" tabindex="0" name="font-switcher" id="sylexiad-toggle" class="text-radio" aria-label="Use Sylexiad Font" title="Use Sylexiad Font">
-    <div class="text-toggle-choice {toggled ? 'selected' : 'deselected'}" id="sylexiad">
-      <p>
-        S<sub>y</sub>
-      </p>
-    </div>
-  </label> -->
-</div>
+</fieldset>
 
 <script>
   const atkinson = document.querySelector('.switch-atkinson');
@@ -39,6 +24,19 @@
   function switchFont(fontName) {
     localStorage.setItem('documentFont', fontName);
     document.documentElement.className = fontName;
+    setSelected(fontName);
+  }
+
+  function setSelected(fontName) {
+    if(fontName === 'atkinson') {
+      atkinson.classList.add('selected');
+      sylexiad.classList.remove('selected');
+    }
+
+    if(fontName === 'sylexiad') {
+      sylexiad.classList.toggle('selected');
+      atkinson.classList.remove('selected');
+    }
   }
 
   (function() {
@@ -52,66 +50,26 @@
   .text-toggle {
     display: flex;
     gap: 1rem;
-    /* aspect-ratio: 2 / 1; */
     border: none;
     padding: 0;
     background: transparent;
+    border: 1px solid var(--foreground);
+    padding: 0 var(--space-2xs-xs) 0.5rem var(--space-2xs-xs);
+  }
+
+  .switch {
     font-size: var(--step-1);
-    /* background: tomato; */
-  }
-
-  label {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 1 / 1;
-  }
-
-  .text-toggle-choice {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     letter-spacing: 0.125em;
+    background: transparent;
+    border: none;
+    color: var(--foreground);
     cursor: pointer;
-    padding: 0.25rem;
-    font-weight: bold;
+    padding: 0.25rem 0.5rem;
   }
-
-  .text-radio {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-  }
-
-  .text-radio:focus {
-    outline-color: transparent;
-  }
-
-  .text-radio:focus ~ .text-toggle-choice {
-    outline: 1px solid var(--foreground-muted);
-    /* background: var(--background-muted); */
-    color: var(--hover);
-    outline-offset: 0.25rem;
-  }
-
-  .text-radio:checked ~ .text-toggle-choice {
+  .switch:hover {
     color: var(--hover);
   }
-
-  #sylexiad {
-    font-family: var(--sylexiad);
+  .selected {
+    background: var(--background-muted);
   }
 </style>
