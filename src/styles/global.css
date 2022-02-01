@@ -277,9 +277,9 @@ main {
 
 footer {
 	grid-area: footer;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	border-top: 1px solid var(--foreground-muted);
+	padding: var(--space-xs-s) 0;
+	text-align: center;
 }
 
 /* READABILITY STYLES */
@@ -472,6 +472,13 @@ h2, h3 {
 		flex-direction: column;
 		gap: var(--space-document-m);
 		padding: var(--space-document-m);
+	}
+	aside {
+		position: relative;
+		margin-bottom: var(--space-document);
+	}
+	footer {
+		text-align: start;
 	}
 }
 
