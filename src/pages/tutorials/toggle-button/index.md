@@ -8,7 +8,7 @@ draft: true
 
 Considerations for an accessible toggle button:
 
-Honestly, there aren't all that many considerations if you use a real `<button>` element. In order to indicate that the button is pressed properly, though, you'll wantt to forego 
+Honestly, there aren't all that many considerations if you use a real `<button>` element. In order to indicate that the button is pressed properly, though, you'll want to forego 
 
 Resources:
 [Adrian Roselli - Under-Engineered Toggles Too](https://adrianroselli.com/2019/08/under-engineered-toggles-too.html)
