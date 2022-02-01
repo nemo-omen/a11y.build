@@ -1,5 +1,5 @@
 ---
- const { id } = Astro.props;
+
 ---
 
 
@@ -15,6 +15,7 @@
 </fieldset>
 
 <script>
+  // const doc = document.documentElement;
   const atkinson = document.querySelector('.switch-atkinson');
   const sylexiad = document.querySelector('.switch-sylexiad');
 
@@ -23,7 +24,13 @@
 
   function switchFont(fontName) {
     localStorage.setItem('documentFont', fontName);
-    document.documentElement.className = fontName;
+    if(fontName === 'atkinson') {
+      doc.classList.remove('sylexiad');
+      doc.classList.add('atkinson');
+    }else {
+      doc.classList.remove('atkinson');
+      doc.classList.add('sylexiad');
+    }
     setSelected(fontName);
   }
 

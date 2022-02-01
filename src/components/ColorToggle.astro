@@ -1,0 +1,84 @@
+---
+ 
+---
+<fieldset class="color-toggle">
+<legend>Color</legend>
+  <button class="switch switch-light">
+    A<sub>t</sub>
+  </button>
+  <button class="switch switch-dark">
+    S<sub>y</sub>
+  </button>
+</fieldset>
+
+<script>
+  const doc = document.documentElement;
+  const light = document.querySelector('.switch-light');
+  const dark = document.querySelector('.switch-dark');
+
+  light.addEventListener('click', () => switchTheme('light'));
+  dark.addEventListener('click', () => switchTheme('dark'));
+
+  function switchTheme(mode) {
+    console.log({mode});
+    switch(mode) {
+      case 'light':
+        doc.classList.add('light');
+        doc.classList.remove('dark');
+        break;
+      case 'dark':
+        doc.classList.add('dark');
+        doc.classList.remove('light');
+        break;
+    }
+    localStorage.setItem('documentMode', mode);
+    setSelected(mode);
+  }
+
+  function setSelected(mode) {
+    if(mode === 'light') {
+      dark.setAttribute('aria-pressed', false);
+      light.setAttribute('aria-pressed', true);
+    }
+
+    if(mode === 'dark') {
+      dark.setAttribute('aria-pressed', true);
+      light.setAttribute('aria-pressed', false);
+    }
+  }
+
+  (function() {
+    const currentMode = localStorage.getItem('documentMode')
+    if(currentMode) {
+      switchTheme(currentMode);
+    }
+  }())
+</script>
+
+<style>
+  .color-toggle {
+    display: flex;
+    gap: 1rem;
+    border: none;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--foreground);
+    padding: 0 var(--space-2xs-xs) 0.5rem var(--space-2xs-xs);
+  }
+
+  .switch {
+    font-size: var(--step-1);
+    letter-spacing: 0.125em;
+    background: transparent;
+    border: none;
+    color: var(--foreground);
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+  }
+  .switch:hover {
+    color: var(--hover);
+  }
+  .switch[aria-pressed='true'] {
+    background: var(--background-muted);
+  }
+</style>

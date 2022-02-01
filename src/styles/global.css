@@ -200,7 +200,7 @@
 
 body {
 	display: grid;
-	grid-template-columns: auto 1fr auto;
+	grid-template-columns: auto 1fr 12vw;
 	grid-template-areas: 
 		"header 	header	header"
 		"navbar 	main		menu"

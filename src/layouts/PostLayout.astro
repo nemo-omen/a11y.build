@@ -5,7 +5,7 @@
   import Footer from '../components/Footer.astro';
   import Sidebar from '../components/Sidebar.svelte';
   import TutorialOverview from '../components/TutorialOverview.svelte';
-  import TextToggle from '../components/TextToggle.astro';
+  import SettingsBar from '../components/SettingsBar.astro';
 
   const guideSections =     Astro.fetchContent('../pages/sections/*/*.md');
   const tutorialSections =  Astro.fetchContent('../pages/tutorials/*/*.md');
@@ -51,10 +51,8 @@
         <slot />
     </section>
   </main>
-  
-  <aside id="menu">
-    <TextToggle />
-  </aside>
+
+  <SettingsBar />
   <Footer />
 </body>
 </html>
