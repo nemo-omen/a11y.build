@@ -1,0 +1,67 @@
+---
+
+---
+  <script hoist>
+    function checkLocalSettings() {
+      let userSettings = {
+        color: 'light',
+        font: 'atkinson',
+      };
+
+      const currentMode = localStorage.getItem('documentMode');
+      const currentFont = localStorage.getItem('documentFont');
+
+      if(currentMode) {
+        userSettings.color = currentMode;
+      }
+
+      if(currentFont) {
+        userSettings.font = currentFont;
+      }
+
+      return userSettings;
+    }
+  </script>
+
+  <script>
+    const { color, font } = checkLocalSettings();
+    const doc = document.documentElement;
+
+    switchTheme(color);
+    switchFont(font);
+
+    function switchTheme(mode) {
+      if(mode === 'light') {
+        doc.classList.add('light');
+        doc.classList.remove('dark');
+      }
+
+      if(mode === 'dark') {
+        doc.classList.add('dark');
+        doc.classList.remove('light');
+      }
+
+      localStorage.setItem('documentMode', mode);
+    }
+
+    function switchFont(fontName) {
+      
+      if(fontName === 'atkinson') {
+        // doc.classList.remove('sylexiad');
+        // doc.classList.add('atkinson');
+        // doc.style.fontFamily = 'Atkinson Hyperlegible';
+        document.body.style.fontFamily = 'Atkinson Hyperlegible';
+      }
+      
+      if(fontName === 'sylexiad') {
+        // doc.classList.remove('atkinson');
+        // doc.classList.add('sylexiad');
+        // doc.style.fontFamily = 'Sylexiad';
+        document.body.style.fontFamily = 'Sylexiad';
+      }
+
+      localStorage.setItem('documentFont', fontName);
+    }
+
+    // checkLocalSettings();
+  </script>

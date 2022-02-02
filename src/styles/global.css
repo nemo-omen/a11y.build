@@ -301,6 +301,10 @@ main {
 	align-self: start;
 }
 
+main.across {
+	grid-column: 1 / 4;
+}
+
 footer {
 	grid-area: footer;
 	border-top: 1px solid var(--foreground-muted);
@@ -375,6 +379,27 @@ blockquote {
 ::selection {
 	color: var(--background);
 	background: var(--foreground);
+}
+
+.center {
+	text-align: center;
+}
+
+a.link-button {
+	display: inline flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--link);
+	color: var(--background);
+	text-decoration: none;
+	line-height: 0.9;
+	padding: 1rem;
+	font-weight: 600;
+	letter-spacing: 0.125em;
+}
+
+.txt-lg {
+	font-size: var(--step-1);
 }
 
 .flow > * + * {

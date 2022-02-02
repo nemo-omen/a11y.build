@@ -4,6 +4,7 @@
   import Header from '../components/Header.astro';
   import Footer from '../components/Footer.astro';
   import SettingsBar from '../components/SettingsBar.astro';
+  import ThemeScript from '../components/ThemeScript.astro';
 
   const guideSections =     Astro.fetchContent('../pages/sections/*/*.md');
   const tutorialSections =  Astro.fetchContent('../pages/tutorials/*/*.md');
@@ -41,4 +42,5 @@
   <SettingsBar />
   <Footer />
 </body>
+<ThemeScript client:load/>
 </html>

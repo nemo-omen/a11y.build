@@ -1,24 +1,28 @@
 ---
-	import DefaultLayout from '../layouts/DefaultLayout.astro';
+	import IntroLayout from '../layouts/IntroLayout.astro';
 	/**@NOTE - 	you're really, really going to want to make sure your
 	 *  				.md files & their parent directories are located in the
 	 * 					/src/pages directory so you can rely on file-based routing
 	 * */ 
 
 	// const allTutorials = Astro.fetchContent('./tutorials/*/*.md');
-	const sections = Astro.fetchContent('./sections/*/*.md');
+	// const sections = Astro.fetchContent('./sections/*/*.md');
 ---
-<DefaultLayout title="a11y.build" sections={sections}>
+<IntroLayout title="a11y.build">
 	<div class="hero flow">
 		<p class="hero-intro">Learn web-development techniques that make your sites work for <em>everyone</em>.</p>
 		<p class="hero-message">Web design and web development are tough subjects to learn, so it's understandable that most introductions don't focus too much on teaching people how to write code that's accessible and inclusive.</p>
+		<div class="center">
+			<a href="/tutorials" class="link-button txt-lg">Get Started</a>
+			<!-- <a href="/guide" class="link-button">Guide</a> -->
+		</div>
 		<p class="hero-message">Unfortunately, this means that a lot of beginners, (and even intermediate developers), are writing code that doesn't work for <em>a lot of people</em>.</p>
 		<p class="hero-message">26% of adults in the U.S. have some type of disability. That means that potentially 26% of the time, a website that's not created accessibly is broken.</p>
 		<p>We think that's crazy.</p>
 		<p>Not only is your code not working the way you would want it to for a massive portion of the population, you're leaving out people who might enjoy, or even need what you create.</p>
 		<p>We know we can make the web a more inclusive, more helpful place for everyone that uses it. It's just a matter of putting already known techniques into practice. For some people, that means starting over from the beginning. For others, that means just starting.</p>
 	</div>
-</DefaultLayout>
+</IntroLayout>
 
 <style>
 .hero {

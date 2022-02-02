@@ -15,26 +15,10 @@
 </fieldset>
 
 <script>
-  // const doc = document.documentElement;
+  // This script interacts with the theme setting script
+  // located in '/src/layouts/HeadLayout.astro'
   const atkinson = document.querySelector('.switch-atkinson');
   const sylexiad = document.querySelector('.switch-sylexiad');
-
-  atkinson.addEventListener('click', () => switchFont('atkinson'));
-  sylexiad.addEventListener('click', () => switchFont('sylexiad'));
-
-  function switchFont(fontName) {
-    localStorage.setItem('documentFont', fontName);
-    if(fontName === 'atkinson') {
-      document.body.classList.remove('sylexiad');
-      document.body.classList.add('atkinson');
-      // document.body.style.fontFamily = 'Atkinson Hyperlegible';
-    }else {
-      document.body.classList.remove('atkinson');
-      document.body.classList.add('sylexiad');
-      // document.body.style.fontFamily = 'Sylexiad';
-    }
-    setSelected(fontName);
-  }
 
   function setSelected(fontName) {
     if(fontName === 'atkinson') {
@@ -48,12 +32,15 @@
     }
   }
 
-  (function() {
-    const currentFont = localStorage.getItem('documentFont')
-    if(currentFont) {
-      switchFont(currentFont);
-    }
-  }())
+  atkinson.addEventListener('click', () => {
+    switchFont('atkinson');
+    setSelected('atkinson');
+  });
+  
+  sylexiad.addEventListener('click', () => {
+    switchFont('sylexiad');
+    setSelected('sylexiad');
+  });
 </script>
 
 <style>

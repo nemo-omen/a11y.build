@@ -18,38 +18,33 @@
 </fieldset>
 
 <script>
-  const doc = document.documentElement;
+  // This script interacts with the theme setting script
+  // located in '/src/layouts/HeadLayout.astro'
   const light = document.querySelector('.switch-light');
   const dark = document.querySelector('.switch-dark');
 
-  light.addEventListener('click', () => switchTheme('light'));
-  dark.addEventListener('click', () => switchTheme('dark'));
-
-  function switchTheme(mode) {
-    console.log({mode});
-    switch(mode) {
-      case 'light':
-        doc.classList.add('light');
-        doc.classList.remove('dark');
-        dark.setAttribute('aria-pressed', false);
-        light.setAttribute('aria-pressed', true);
-        break;
-      case 'dark':
-        doc.classList.add('dark');
-        doc.classList.remove('light');
-        dark.setAttribute('aria-pressed', true);
-        light.setAttribute('aria-pressed', false);
-        break;
+  function setSelectedColor(colorMode) {
+    if(colorMode === 'dark') {
+      dark.setAttribute('aria-pressed', true);
+      light.setAttribute('aria-pressed', false);
     }
-    localStorage.setItem('documentMode', mode);
+
+    if(colorMode === 'light') {
+      dark.setAttribute('aria-pressed', false);
+      light.setAttribute('aria-pressed', true);
+    }
   }
 
-  (function() {
-    const currentMode = localStorage.getItem('documentMode')
-    if(currentMode) {
-      switchTheme(currentMode);
-    }
-  }())
+  light.addEventListener('click', () => {
+    switchTheme('light');
+    setSelectedColor('light');
+  });
+
+  dark.addEventListener('click', () => {
+    switchTheme('dark');
+    setSelectedColor('dark');
+  });
+
 </script>
 
 <style>
