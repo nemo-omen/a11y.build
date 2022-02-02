@@ -25,11 +25,13 @@
   function switchFont(fontName) {
     localStorage.setItem('documentFont', fontName);
     if(fontName === 'atkinson') {
-      doc.classList.remove('sylexiad');
-      doc.classList.add('atkinson');
+      document.body.classList.remove('sylexiad');
+      document.body.classList.add('atkinson');
+      // document.body.style.fontFamily = 'Atkinson Hyperlegible';
     }else {
-      doc.classList.remove('atkinson');
-      doc.classList.add('sylexiad');
+      document.body.classList.remove('atkinson');
+      document.body.classList.add('sylexiad');
+      // document.body.style.fontFamily = 'Sylexiad';
     }
     setSelected(fontName);
   }

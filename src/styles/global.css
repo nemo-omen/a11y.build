@@ -47,32 +47,36 @@
 
 @font-face {
 	font-family: 'Sylexiad Sans';
-	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed.otf');
-	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed.otf') format('opentype'),
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed.woff');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed.woff') format('woff'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed.otf') format('opentype'),
 				url('/public/assets/fonts/SylexiadSansSpacedMed.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Sylexiad Sans';
-	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.otf');
-	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.otf') format('opentype'),
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.woff');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.woff') format('woff'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.otf') format('opentype'),
 				url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.ttf') format('truetype');
 	font-weight: normal;
 	font-style: italic;
 }
 @font-face {
 	font-family: 'Sylexiad Sans';
-	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.otf');
-	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.otf') format('opentype'),
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.woff');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.woff') format('woff'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.otf') format('opentype'),
 				url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Sylexiad Sans';
-	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.otf');
-	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.otf') format('opentype'),
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.woff');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.woff') format('woff'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.otf') format('opentype'),
 				url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.ttf') format('truetype');
 	font-weight: bold;
 	font-style: italic;
@@ -91,6 +95,7 @@
 
 	--serif: 'Times New Roman', Times, serif;
 	--sylexiad: 'Sylexiad Sans';
+	--mono: 'Fira Code', 'Courier New', Courier, monospace
 
 	
 	--reader-font: var(--atkinson-sans);
@@ -98,6 +103,7 @@
 	font-family: var(--reader-font);
 	font-size: 1rem;
 	font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem);
+	color: var(--foreground);
 
 	/* UTOPIA FLUID TYPE SCALE */
 	/* @link  https://utopia.fyi/type/calculator*/
@@ -188,6 +194,10 @@
 	--hover: #C42348;
 }
 
+html, body {
+	font-family: var(--atkinson-sans);
+}
+
 .atkinson {
 	font-family: var(--atkinson-sans);
 }
@@ -233,7 +243,6 @@ header {
 	display: flex;
 	justify-content: space-between;
 	grid-area: header;
-	/* max-width: clamp(16rem, 90vw, 70rem); */
 }
 
 
@@ -300,13 +309,13 @@ footer {
 }
 
 /* READABILITY STYLES */
-a:not([class]), .skip-link, .date-link, a:visited {
-  color: currentColor;
+[href], [href]:visited {
 	transition: color 0.2s ease-out;
+  color: currentColor !important;
 }
 
 :focus {
-  outline: 1px dashed;
+  outline: 1px solid;
   outline-offset: 0.25rem;
 }
 
@@ -316,7 +325,7 @@ main:focus {
 
 [href]:hover {
   text-decoration: none;
-	color: var(--hover);
+	color: var(--hover) !important;
 }
 
 h1,
@@ -343,8 +352,6 @@ h3 {
 }
 
 a h1, a h2, .site {
-	/* justify-self: flex-start;
-	align-self: flex-start; */
 	display: inline;
 }
 
@@ -387,6 +394,15 @@ h2, h3 {
 	max-width: 25ch;
 }
 
+code {
+	font-size: var(--step-0);
+	background: var(--background-muted);
+	display: inline-block;
+	padding: 0 0.25em;
+	color: var(--hover);
+	/* font-family: var(--mono) !important; */
+}
+
 #site {
 	display: inline-flex;
 	gap: var(--space-3xs-2xs);
@@ -396,9 +412,13 @@ h2, h3 {
 	font-size: var(--step-1);
 }
 
-#site:hover > * {
+/* #site * {
+	transition: color 0.2s ease-out;
+} */
+
+/* #site:hover * {
 	color: var(--hover);
-}
+} */
 
 #site h1 {
 	margin: 0;
@@ -406,7 +426,6 @@ h2, h3 {
 	line-height: 0.9;
 	font-size: var(--step-1);
 	letter-spacing: 0.125em;
-	transition: color 0.2s ease-out;
 }
 
 .post {
