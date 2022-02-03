@@ -5,10 +5,12 @@
 <fieldset class="text-toggle">
 <legend>Font</legend>
   <button class="switch switch-atkinson">
-    A<sub>t</sub>
+    <span class="button-text">A<sub>t</sub></span>
+    <span class="button-label">Default</span>
   </button>
   <button class="switch switch-sylexiad">
-    S<sub>y</sub>
+    <span class="button-text">S<sub>y</sub></span>
+    <span class="button-label">Dyslexia</span>
   </button>
 </fieldset>
 
@@ -54,8 +56,13 @@
   }
 
   .switch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
     font-size: 2rem;
-    width: 3.5rem;
+    /* width: 4rem; */
     letter-spacing: 0.125em;
     background: transparent;
     border: none;
@@ -68,5 +75,13 @@
   }
   .switch[aria-pressed='true'] {
     background: var(--background-muted);
+  }
+
+  .button-text {
+    line-height: 0.9;
+  }
+
+  .button-label {
+    font-size: 0.75rem;
   }
 </style>

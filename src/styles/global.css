@@ -227,7 +227,7 @@ html, body {
 
 body {
 	display: grid;
-	grid-template-columns: auto 1fr 12vw;
+	grid-template-columns: auto 1fr auto;
 	grid-template-areas: 
 		"header 	header	header"
 		"navbar 	main		menu"
@@ -264,6 +264,15 @@ aside {
 #menu {
 	grid-area: menu;
 	align-self: start;
+	/* display: flex;
+	flex-direction: column; */
+	justify-content: flex-end;
+}
+
+#menu details summary {
+	display: flex;
+	justify-content: flex-start;
+	text-align: right;
 }
 
 .toc {
