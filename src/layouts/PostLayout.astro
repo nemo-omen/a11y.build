@@ -3,9 +3,8 @@
   import BlogHeadLayout from './BlogHeadLayout.astro';
   import Header from '../components/Header.astro';
   import Footer from '../components/Footer.astro';
-  import Sidebar from '../components/Sidebar.svelte';
+  import Sidebar from '../components/Sidebar.astro';
   import TutorialOverview from '../components/TutorialOverview.svelte';
-  import SettingsBar from '../components/SettingsBar.astro';
   import ThemeScript from '../components/ThemeScript.astro';
 
   const guideSections =     Astro.fetchContent('../pages/sections/*/*.md');
@@ -53,7 +52,6 @@
     </section>
   </main>
 
-  <SettingsBar />
   <Footer />
 </body>
 <ThemeScript client:load/>

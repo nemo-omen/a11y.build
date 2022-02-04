@@ -227,10 +227,10 @@ html, body {
 
 body {
 	display: grid;
-	grid-template-columns: auto 1fr auto;
+	grid-template-columns: 1fr 5fr;
 	grid-template-areas: 
 		"header 	header	header"
-		"navbar 	main		menu"
+		"navbar 	main		main"
 		"footer 	footer	footer";
 	gap: var(--space-document);
 	background: var(--background);
@@ -259,6 +259,7 @@ aside {
 #sidebar {
 	grid-area: navbar;
 	align-self: start;
+	min-width: 256px;
 }
 
 #menu {
@@ -466,6 +467,7 @@ code {
 	--flow-space: var(--space-container);
 	margin-left: auto;
 	margin-right: auto;
+	max-width: clamp(16rem, 90vw, 50rem);
 }
 
 .post time {

@@ -1,0 +1,10 @@
+---
+  import ContentBar from './ContentBar.svelte';
+  import SettingsBar from './SettingsBar.astro';
+  const { titles, menus } = Astro.props;
+---
+
+  <aside id="sidebar">
+    <ContentBar titles={titles} menus={menus} />
+    <SettingsBar />
+  </aside>
