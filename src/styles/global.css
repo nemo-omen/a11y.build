@@ -83,42 +83,87 @@
 }
 
 @font-face {
-	font-family: 'Monolexic';
-	src:  url('/public/assets/fonts/iMonolexic.eot');
-	src:  url('/public/assets/fonts/iMonolexic.eot') format('eot'),
-			  url('/public/assets/fonts/iMonolexic.woff') format('woff'),
-			  url('/public/assets/fonts/iMonolexic.ttf') format('ttf');
+	font-family: 'emonolexic';
+	src: url('/public/assets/fonts/emonolexic-bold-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/emonolexic-bold-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: 'emonolexic';
+	src: url('/public/assets/fonts/emonolexic-bolditalic-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/emonolexic-bolditalic-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+
+
+@font-face {
+	font-family: 'emonolexic';
+	src: url('/public/assets/fonts/emonolexic-book-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/emonolexic-book-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 
+
+
+
 @font-face {
-	font-family: 'Monolexic';
-	src:  url('/public/assets/fonts/iMonolexic-italic.eot');
-	src:  url('/public/assets/fonts/iMonolexic-italic.eot') format('eot'),
-			  url('/public/assets/fonts/iMonolexic-italic.woff') format('woff'),
-			  url('/public/assets/fonts/iMonolexic-italic.ttf') format('ttf');
+	font-family: 'emonolexic';
+	src: url('/public/assets/fonts/emonolexic-bookitalic-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/emonolexic-bookitalic-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: italic;
 }
 
+
+
+
 @font-face {
-	font-family: 'Monolexic';
-	src:  url('/public/assets/fonts/iMonolexic-bold.eot');
-	src:  url('/public/assets/fonts/iMonolexic-bold.eot') format('eot'),
-			  url('/public/assets/fonts/iMonolexic-bold.woff') format('woff'),
-			  url('/public/assets/fonts/iMonolexic-bold.ttf') format('ttf');
+	font-family: 'imonolexic';
+	src: url('/public/assets/fonts/imonolexic-bold-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/imonolexic-bold-webfont.woff') format('woff');
 	font-weight: bold;
 	font-style: normal;
 }
 
+
+
+
 @font-face {
-	font-family: 'Monolexic';
-	src:  url('/public/assets/fonts/iMonolexic-bolditalic.eot');
-	src:  url('/public/assets/fonts/iMonolexic-bolditalic.eot') format('eot'),
-			  url('/public/assets/fonts/iMonolexic-bolditalic.woff') format('woff'),
-			  url('/public/assets/fonts/iMonolexic-bolditalic.ttf') format('ttf');
+	font-family: 'imonolexic';
+	src: url('/public/assets/fonts/imonolexic-bolditalic-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/imonolexic-bolditalic-webfont.woff') format('woff');
 	font-weight: bold;
+	font-style: italic;
+}
+
+
+
+
+@font-face {
+	font-family: 'imonolexic';
+	src: url('/public/assets/fonts/imonolexic-book-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/imonolexic-book-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: 'imonolexic';
+	src: url('/public/assets/fonts/imonolexic-bookitalic-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/imonolexic-bookitalic-webfont.woff') format('woff');
+	font-weight: normal;
 	font-style: italic;
 }
 
@@ -267,7 +312,7 @@ html, body {
 
 body {
 	display: grid;
-	grid-template-columns: 1fr 5fr;
+	grid-template-columns: 1fr 4fr;
 	grid-template-areas: 
 		"header 	header	header"
 		"navbar 	main		main"
@@ -299,7 +344,7 @@ aside {
 #sidebar {
 	grid-area: navbar;
 	align-self: start;
-	min-width: 256px;
+	/* min-width: 256px; */
 }
 
 #sidebar > * + * {

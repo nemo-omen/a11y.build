@@ -9,7 +9,7 @@ overviewItems:
     slug: 'installing-vs-code'
 ---
 
-Web design and development is primarily by editing different kinds of files, usually, (but not always,) `.html`, `.css`, and `.js` files. We can't edit files like that with just any editor — you can't create a working `.html` file using a program like Microsoft Word. You're going to need an editor that's made specifically for editing plain text files.
+Web design and development is done primarily by editing different kinds of files, usually, (but not always,) `.html`, `.css`, and `.js` files. We can't edit files like that with just any editor — you can't create a working `.html` file using a program like Microsoft Word. You're going to need an editor that's made specifically for editing plain text files.
 
 But before we get to installing a good editor, let's address something else. Because we'll be working with files, we're going to need an organized place to keep them. On my computer, I keep a folder named `projects`, where I keep individual folders for each of the projects I'm working on. So go ahead and create your own projects folder. You can name it whatever you want, but `projects` is what we'll be referring to throughout any tutorials on this site when referring to the directory where projects are kept.
 
