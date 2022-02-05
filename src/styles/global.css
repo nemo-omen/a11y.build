@@ -262,6 +262,10 @@ aside {
 	min-width: 256px;
 }
 
+#sidebar > * + * {
+	margin-top: var(--space-2xs-xs);
+}
+
 #menu {
 	grid-area: menu;
 	align-self: start;
