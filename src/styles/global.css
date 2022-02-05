@@ -82,6 +82,46 @@
 	font-style: italic;
 }
 
+@font-face {
+	font-family: 'Monolexic';
+	src:  url('/public/assets/fonts/iMonolexic.eot');
+	src:  url('/public/assets/fonts/iMonolexic.eot') format('eot'),
+			  url('/public/assets/fonts/iMonolexic.woff') format('woff'),
+			  url('/public/assets/fonts/iMonolexic.ttf') format('ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Monolexic';
+	src:  url('/public/assets/fonts/iMonolexic-italic.eot');
+	src:  url('/public/assets/fonts/iMonolexic-italic.eot') format('eot'),
+			  url('/public/assets/fonts/iMonolexic-italic.woff') format('woff'),
+			  url('/public/assets/fonts/iMonolexic-italic.ttf') format('ttf');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Monolexic';
+	src:  url('/public/assets/fonts/iMonolexic-bold.eot');
+	src:  url('/public/assets/fonts/iMonolexic-bold.eot') format('eot'),
+			  url('/public/assets/fonts/iMonolexic-bold.woff') format('woff'),
+			  url('/public/assets/fonts/iMonolexic-bold.ttf') format('ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Monolexic';
+	src:  url('/public/assets/fonts/iMonolexic-bolditalic.eot');
+	src:  url('/public/assets/fonts/iMonolexic-bolditalic.eot') format('eot'),
+			  url('/public/assets/fonts/iMonolexic-bolditalic.woff') format('woff'),
+			  url('/public/assets/fonts/iMonolexic-bolditalic.ttf') format('ttf');
+	font-weight: bold;
+	font-style: italic;
+}
+
 /* GENERAL STYLES */
 * {
 	box-sizing: border-box;
