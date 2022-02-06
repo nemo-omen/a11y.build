@@ -23,9 +23,9 @@
         <span class="navbar-title">{titles[index]}</span>
       </span>
     </summary>
-    <nav class="toc">
+    <div class="toc navigation">
       {#each menu.sections as section}
-        <ol class="toc-menu" id="navigation">
+        <ol class="toc-menu">
           <li>
             <a href={section.url}>
               {section.title}
@@ -33,6 +33,6 @@
           </li>
         </ol>
       {/each}
-    </nav>
+    </div>
   </details>
 {/each}

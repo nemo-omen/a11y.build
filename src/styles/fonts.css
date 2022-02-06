@@ -1,0 +1,168 @@
+/* LOAD CUSTOM FONTS */
+/* Atkinson Hyperlegible Normal */
+@font-face {
+	font-family: 'Atkinson Hyperlegible';
+	src: 	url('/public/assets/fonts/Atkinson-Hyperlegible-Regular-102.eot');
+	src: 	url('/public/assets/fonts/Atkinson-Hyperlegible-Regular-102.eot') format('embedded-opentype'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-Regular-102.woff') format('woff'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-Regular-102.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Atkinson Hyperlegible';
+	src: 	url('/public/assets/fonts/Atkinson-Hyperlegible-Italic-102.eot');
+	src: 	url('/public/assets/fonts/Atkinson-Hyperlegible-Italic-102.eot') format('embedded-opentype'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-Italic-102a.woff2') format('woff2'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-Italic-102.woff') format('woff'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-Italic-102.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+/* Atkinson Hyperlegible Bold */
+@font-face {
+	font-family: 'Atkinson Hyperlegible';
+	src: 	url('/public/assets/fonts/Atkinson-Hyperlegible-Bold-102.eot');
+	src: 	url('/public/assets/fonts/Atkinson-Hyperlegible-Bold-102.eot') format('embedded-opentype'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-Bold-102a.woff2') format('woff2'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-Bold-102.woff') format('woff'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-Bold-102.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Atkinson Hyperlegible';
+	src: 	url('/public/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102.eot');
+	src: 	url('/public/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102.eot') format('embedded-opentype'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2') format('woff2'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102.woff') format('woff'),
+				url('/public/assets/fonts/Atkinson-Hyperlegible-BoldItalic-102.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Sylexiad Sans';
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed.woff');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed.woff') format('woff'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed.otf') format('opentype'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Sylexiad Sans';
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.woff');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.woff') format('woff'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.otf') format('opentype'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Ita.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Sylexiad Sans';
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.woff');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.woff') format('woff'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.otf') format('opentype'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Sylexiad Sans';
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.woff');
+	src: 	url('/public/assets/fonts/SylexiadSansSpacedMed-Bold.woff') format('woff'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.otf') format('opentype'),
+				url('/public/assets/fonts/SylexiadSansSpacedMed-Bita.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'emonolexic';
+	src: url('/public/assets/fonts/emonolexic-bold-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/emonolexic-bold-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: 'emonolexic';
+	src: url('/public/assets/fonts/emonolexic-bolditalic-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/emonolexic-bolditalic-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+
+
+@font-face {
+	font-family: 'emonolexic';
+	src: url('/public/assets/fonts/emonolexic-book-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/emonolexic-book-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: 'emonolexic';
+	src: url('/public/assets/fonts/emonolexic-bookitalic-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/emonolexic-bookitalic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+
+
+@font-face {
+	font-family: 'imonolexic';
+	src: url('/public/assets/fonts/imonolexic-bold-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/imonolexic-bold-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: 'imonolexic';
+	src: url('/public/assets/fonts/imonolexic-bolditalic-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/imonolexic-bolditalic-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+
+
+@font-face {
+	font-family: 'imonolexic';
+	src: url('/public/assets/fonts/imonolexic-book-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/imonolexic-book-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: 'imonolexic';
+	src: url('/public/assets/fonts/imonolexic-bookitalic-webfont.woff2') format('woff2'),
+			 url('/public/assets/fonts/imonolexic-bookitalic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}

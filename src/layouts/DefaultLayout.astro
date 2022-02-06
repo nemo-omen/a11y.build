@@ -7,18 +7,18 @@
   import MenuButton from '../components/MenuButton.astro';
 
   const guideSections =     Astro.fetchContent('../pages/sections/*/*.md');
-  const tutorialSections =  Astro.fetchContent('../pages/tutorials/*/*.md');
+  const tutorialSections =  Astro.fetchContent('../pages/tutorial/*/*.md');
   const postSections =      Astro.fetchContent('../pages/posts/*/*.md');
 
   const menus = [tutorialSections, guideSections, postSections];
-  const menuTitles = ['Tutorials', 'Guide', 'More'];
+  const menuTitles = ['Tutorial', 'Guide', 'More'];
   
   const { title, sections } = Astro.props;
 
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
 
@@ -30,14 +30,14 @@
 <body>
   <Header />
   <div class="page">
-    <main class="flow" id="main">
-      <slot />
-    </main>
     <Sidebar titles={menuTitles} menus={menus} />
+    <main class="flow" id="main" role="main">
+      <slot />
+    <MenuButton />
+    </main>
   </div>
 
   <Footer />
-  <MenuButton />
 </body>
 <ThemeScript client:load/>
 </html>

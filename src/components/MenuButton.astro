@@ -7,6 +7,7 @@
     id="menu-button"
     aria-expanded="false"
     aria-controls="content-nav"
+    tabindex="-1"
   >
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
@@ -30,18 +31,18 @@
 
     const show = function () {
       menuButton.setAttribute('aria-expanded', 'true');
-      sidebar.setAttribute('aria-hidden', 'false');
-      // sidebar.classList.toggle('show-menu');
+      // sidebar.setAttribute('aria-hidden', 'false');
+      sidebar.classList.add('show-menu');
     }
 
     const hide = function () {
       menuButton.setAttribute('aria-expanded', 'false');
-      sidebar.setAttribute('aria-hidden', 'true');
-      // sidebar.classList.toggle('show-menu');
+      // sidebar.setAttribute('aria-hidden', 'true');
+      sidebar.classList.remove('show-menu');
     }
 
     const handleClosure = function (event) {
-      return !contentNav.contains(event.target) && hide();
+      return (!contentNav.contains(event.target) || event.target === menuButton) && hide();
     }
 
     menuButton.addEventListener('click', function (event) {
@@ -51,6 +52,12 @@
 
     window.addEventListener('click', handleClosure);
     window.addEventListener('focusin', handleClosure);
+
+    contentNav.addEventListener('focusin', (event) => {
+      console.log()
+      if(contentNav.classList.contains('show-menu')) return;
+      show();
+    })
   </script>
 
   <style>
@@ -70,7 +77,7 @@
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
       transition: all 0.2s ease-out;
     }
-    #menu-button:hover {
+    #menu-button:hover, #menu-button:focus {
       background: var(--background);
     }
     #menu-button:active {
