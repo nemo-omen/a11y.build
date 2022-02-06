@@ -2,17 +2,55 @@
 
 ---
 
-  <button id="menu-button">
-    Show
+  <button 
+    type="button"
+    id="menu-button"
+    aria-expanded="false"
+    aria-controls="content-nav"
+  >
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 24 24" 
+      class="c"
+      role="img"  
+    >
+    <title>Open Menu</title>
+    <path 
+      fill="none" 
+      d="M0 0h24v24H0z"/>
+    <path 
+      d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/>
+    </svg>
   </button>
 
   <script>
     const sidebar = document.getElementById("sidebar");
     const menuButton = document.getElementById("menu-button");
+    const contentNav = document.getElementById("content-nav");
 
-    menuButton.addEventListener('click', function () {
-      sidebar.classList.toggle('show-menu');
+    const show = function () {
+      menuButton.setAttribute('aria-expanded', 'true');
+      sidebar.setAttribute('aria-hidden', 'false');
+      // sidebar.classList.toggle('show-menu');
+    }
+
+    const hide = function () {
+      menuButton.setAttribute('aria-expanded', 'false');
+      sidebar.setAttribute('aria-hidden', 'true');
+      // sidebar.classList.toggle('show-menu');
+    }
+
+    const handleClosure = function (event) {
+      return !contentNav.contains(event.target) && hide();
+    }
+
+    menuButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      JSON.parse(menuButton.getAttribute('aria-expanded')) ? hide() : show();
     });
+
+    window.addEventListener('click', handleClosure);
+    window.addEventListener('focusin', handleClosure);
   </script>
 
   <style>
@@ -21,22 +59,28 @@
       bottom: var(--space-m);
       right: var(--space-m);
       padding: var(--space-2xs);
-      border-radius: 50%;
+      /* border-radius: 50%; */
       aspect-ratio: 1;
-      background: var(--link);
+      background: var(--background-muted);
+      border: 1px solid var(--background-muted);
       z-index: 200;
-      border: none;
-      color: var(--foreground);
-      font-size: var(--step-0);
+      /* border: none; */
+      color: var(--foreground-muted);
+      font-size: var(--step-3);
       box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.4);
       transition: all 0.2s ease-out;
     }
     #menu-button:hover {
-      background: var(--hover);
+      background: var(--background);
     }
     #menu-button:active {
       background: var(--foreground);
       color: var(--background);
+    }
+    .c {
+      fill: currentColor;
+      width: 1em;
+      height: auto;
     }
 
     @media screen and (min-width: 768px) {

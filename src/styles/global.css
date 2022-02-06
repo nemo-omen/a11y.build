@@ -600,16 +600,23 @@ code {
 		left: 0;
 		width: 320px;
 		background: var(--background);
-		/* padding-top: calc(var(--space-document)) !important; */
 		padding: var(--space-document) !important;
 		z-index: 100;
+		opacity: 0;
 		transform: translateX(-100%);
 		transition-property: opacity, transform;
 		transition-duration: 250ms, 250ms;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
 		transition-delay: 0s, 0s;
+		overflow-y: auto;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 	}
-	.show-menu {
+
+	#sidebar:focus {
+		outline: 1px solid var(--foreground);
+	}
+	#sidebar[aria-hidden="false"] {
+		opacity: 1 !important;
 		transform: translateX(0px) !important;
 	}
 	main {

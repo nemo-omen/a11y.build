@@ -5,6 +5,8 @@
 ---
 
   <aside id="sidebar">
-    <ContentBar titles={titles} menus={menus} />
-    <SettingsBar />
+    <nav role="navigation" id="content-nav" aria-hidden="true" aria-labelledby="menu-button">
+      <ContentBar titles={titles} menus={menus} />
+      <SettingsBar />
+    </nav>
   </aside>
