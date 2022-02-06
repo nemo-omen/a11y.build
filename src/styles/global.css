@@ -420,12 +420,6 @@ code {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 560px) {
-	.hero {
-		text-align: center;
-	}
-}
-
 @media screen and (max-width: 768px) {
 	.page {
 		flex-direction: column;
