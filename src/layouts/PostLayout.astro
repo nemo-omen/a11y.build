@@ -6,6 +6,7 @@
   import Sidebar from '../components/Sidebar.astro';
   import TutorialOverview from '../components/TutorialOverview.svelte';
   import ThemeScript from '../components/ThemeScript.astro';
+  import MenuButton from '../components/MenuButton.astro';
 
   const guideSections =     Astro.fetchContent('../pages/sections/*/*.md');
   const tutorialSections =  Astro.fetchContent('../pages/tutorials/*/*.md');
@@ -28,31 +29,33 @@
 
 <body>
   <Header />
-  <Sidebar titles={menuTitles} menus={menus} />
-
-  <main class="flow" id="main">
-    <section class="post flow">
-      <h1 class="section-heading">{content.title}</h2>
-      <time>
-        Last updated: 
-            {new Date(content.date)
-              .toLocaleString(
-                'en-us', 
-                {
-                  weekday: 'long', 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric'
-                }
-              )
-            }
-        </time>
-        <TutorialOverview items={content.overviewItems}/>
-        <slot />
-    </section>
-  </main>
+  <div class="page">  
+    <main class="flow" id="main">
+      <section class="post flow">
+        <h1 class="section-heading">{content.title}</h2>
+        <time>
+          Last updated: 
+              {new Date(content.date)
+                .toLocaleString(
+                  'en-us', 
+                  {
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric'
+                  }
+                )
+              }
+          </time>
+          <TutorialOverview items={content.overviewItems}/>
+          <slot />
+      </section>
+    </main>
+    <Sidebar titles={menuTitles} menus={menus} />
+  </div>
 
   <Footer />
+  <MenuButton />
 </body>
 <ThemeScript client:load/>
 </html>

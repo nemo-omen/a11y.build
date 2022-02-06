@@ -1,0 +1,47 @@
+---
+
+---
+
+  <button id="menu-button">
+    Show
+  </button>
+
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const menuButton = document.getElementById("menu-button");
+
+    menuButton.addEventListener('click', function () {
+      sidebar.classList.toggle('show-menu');
+    });
+  </script>
+
+  <style>
+    #menu-button {
+      position: fixed;
+      bottom: var(--space-m);
+      right: var(--space-m);
+      padding: var(--space-2xs);
+      border-radius: 50%;
+      aspect-ratio: 1;
+      background: var(--link);
+      z-index: 200;
+      border: none;
+      color: var(--foreground);
+      font-size: var(--step-0);
+      box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.4);
+      transition: all 0.2s ease-out;
+    }
+    #menu-button:hover {
+      background: var(--hover);
+    }
+    #menu-button:active {
+      background: var(--foreground);
+      color: var(--background);
+    }
+
+    @media screen and (min-width: 768px) {
+      #menu-button {
+        transform: translate3d(200px, 0, 0);
+      }
+    }
+  </style>

@@ -4,6 +4,7 @@
   import Header from '../components/Header.astro';
   import Footer from '../components/Footer.astro';
   import ThemeScript from '../components/ThemeScript.astro';
+  import MenuButton from '../components/MenuButton.astro';
 
   const guideSections =     Astro.fetchContent('../pages/sections/*/*.md');
   const tutorialSections =  Astro.fetchContent('../pages/tutorials/*/*.md');
@@ -28,17 +29,15 @@
 
 <body>
   <Header />
-  <!-- <input type="checkbox" id="switcher" />
-  <label id="switcher-label" for="switcher" tabindex="0">
-    A
-  </label> -->
-  <Sidebar titles={menuTitles} menus={menus} />
-
-  <main class="flow" id="main">
-    <slot />
-  </main>
+  <div class="page">
+    <main class="flow" id="main">
+      <slot />
+    </main>
+    <Sidebar titles={menuTitles} menus={menus} />
+  </div>
 
   <Footer />
+  <MenuButton />
 </body>
 <ThemeScript client:load/>
 </html>

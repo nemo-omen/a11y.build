@@ -1,5 +1,4 @@
 <script>
-  import Menu from './Menu.svelte';
   export let titles;
   export let menus;
 
