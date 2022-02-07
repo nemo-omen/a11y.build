@@ -7,6 +7,18 @@ const tutorials = Astro.fetchContent('./*/*.md');
 
 <DefaultLayout title="a11y.build | Tutorial">
 
-<h1>Tutorial</h1>
+<div class="hero flow">
+  <h1>Tutorial: Building your first accessible site</h1>
+  <p>All websites start with HTML. This tutorial is here to help you create a simple accessible site. You'll build your own personal landing page so people on the internet can learn more about you. By the end we'll cover the basics of semantic, accessible HTML, CSS, and more!</p>
+</div>
 
+<div class="info">
+  <p>This is a beginner's level tutorial, created for people with little or no web design or web development experience. If you prefer to get straight to the more advanced stuff, check out the <a href="/guides">guides</a>.</p>
+</div>
 </DefaultLayout>
+
+<style>
+  .hero {
+    --flow-space: var(--space-m);
+  }
+</style>

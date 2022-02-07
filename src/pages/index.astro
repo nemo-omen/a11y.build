@@ -8,6 +8,7 @@
 	// const allTutorials = Astro.fetchContent('./tutorials/*/*.md');
 	// const sections = Astro.fetchContent('./sections/*/*.md');
 ---
+	
 <IntroLayout title="a11y.build">
 	<div class="hero flow">
 		<h1 class="hero-intro">Make sites that work for <span class="accent">everyone</span></h1>
@@ -23,19 +24,3 @@
 		<p>We know we can make the web a more inclusive, more helpful place for everyone that uses it. It's just a matter of putting already known techniques into practice. For some people, that means starting over from the beginning. For others, that means just starting.</p>
 	</div>
 </IntroLayout>
-
-<style>
-.hero {
-	--flow-space: var(--space-xl);
-}
-
-.hero-intro {
-	font-size: var(--step-4);
-	max-width: 20ch;
-	align-self: flex-start;
-}
-
-.accent {
-	color: var(--hover);
-}
-</style>

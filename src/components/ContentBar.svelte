@@ -20,7 +20,7 @@
           <path fill="none" d="M0 0h24v24H0z" />
           <path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" />
         </svg>
-        <span class="navbar-title">{titles[index]}</span>
+        <a class="navbar-title" href="/{titles[index].toLowerCase()}">{titles[index]}</a>
       </span>
     </summary>
     <div class="toc navigation">

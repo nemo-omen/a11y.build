@@ -332,7 +332,6 @@ h2, h3 {
 }
 
 code {
-	font-size: var(--step-0);
 	background: var(--background-muted);
 	display: inline-block;
 	padding: 0 0.25em;
@@ -354,6 +353,31 @@ code {
 	line-height: 0.9;
 	font-size: var(--step-1);
 	letter-spacing: 0.125em;
+}
+
+.hero {
+	--flow-space: var(--space-xl);
+}
+
+.hero-intro {
+	font-size: var(--step-4);
+	max-width: 20ch;
+	align-self: flex-start;
+}
+
+.accent {
+	color: var(--hover);
+}
+
+.info {
+	background: var(--background-muted);
+	padding: 0.5rem;
+	display: flex;
+}
+
+.info p {
+	color: var(--foreground-muted);
+	font-size: var(--step--1);
 }
 
 .post {
@@ -402,7 +426,6 @@ code {
 .skip-link:focus {
 	transform: translateY(0%);
 }
-
 
 .date-link {
 	display: inline flex;
@@ -481,8 +504,12 @@ code {
 		font-size: var(--step-0);
 	}
 
-	p, li {
+	p, li, code {
 		font-size: var(--step-0);
+	}
+
+	.info p {
+		font-size: var(step-0);
 	}
 
 	figcaption {
